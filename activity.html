@@ -1,0 +1,150 @@
+<!DOCTYPE html><head>
+	<meta charset="UTF-8">
+	
+	<title>Activity</title>
+	
+<link rel="stylesheet" href="css/activity.css">
+<head>
+	<style>
+         .democlass{
+            color:blue;
+        }
+    </style>
+    <script language="javascript">
+        function addRow(tableID) {
+
+            var table = document.getElementById(tableID);
+            var rowCount = table.rows.length;
+            var colCount = table.rows[0].cells.length;
+
+            var row = table.insertRow(rowCount);
+            
+row = table.insertRow(table.rows.length);
+            for(var i = 0; i < colCount; i++) {
+                var newcell = row.insertCell(i);
+                newcell.innerHTML = table.rows[1].cells[i].innerHTML;
+               
+            }
+
+            
+        }
+
+        /**
+        var newcell = row.insertCell(i);
+               newcell.innerHTML = "<INPUT type=\"button\" value=\"Delete Row\" onclick=\"removeRow(this)\"/>";
+         * This method deletes the specified section of the table
+         * OR deletes the specified rows from the table.
+         */
+        function removeRow(src) {
+
+            var oRow = src.parentElement.parentElement;
+            var rowsCount = 0;
+            document.getElementById("dataTable").deleteRow(oRow.rowIndex);
+            /*for(var index = oRow.rowIndex; index >= 0; index--) {
+
+                document.getElementById("dataTable").deleteRow(index);
+                if(rowsCount == (4 - 2)) {
+                    return;
+                }
+                rowsCount++;
+            }
+            //once the row reference is obtained, delete it passing in its rowIndex
+            /* document.getElementById("dataTable").deleteRow(oRow.rowIndex); */
+        }
+    </script>
+    <P align="right">Logged in as USER!&nbsp&nbsp&nbsp&nbsp</p>
+    <P align="right"><a href="user.html">Back&nbsp&nbsp&nbsp&nbsp&nbsp</a> <a href="index.html">Logout&nbsp&nbsp&nbsp&nbsp&nbsp</a></P>
+    <br>
+    <center>
+  <h1>| PAB - POCKET ACCESS BOOK |</h1><br>
+  <p>Table lists down the access required for selected Application.</p>
+  </center>
+</head>
+<body>
+<div class="login-wrap">
+	<div class="login-html">
+    <form name="myForm">
+        <TABLE id="dataTable" width="100%" border="1">
+           <TR>
+               
+                <TD>
+                    Access Name         
+                </TD>
+                
+                <TD>
+                    Request Type        
+                </TD>
+                
+                <TD>
+                    Approvals        
+                </TD>
+               
+                <TD>
+                    Contact Person       
+                </TD>
+                <TD>Action Owner      </TD>
+                <TD>Action to be taken      </TD>
+                
+                
+            </TR>
+		<TR>
+		<TD>
+                    <INPUT type="text" name="txt" value="Corp ID"/>
+                </TD>
+		<TD>
+                    <SELECT name="ReqType" disabled>
+			<OPTION  value="de"></OPTION>
+                        <OPTION value="in">Service Now Incident</OPTION>
+                        <OPTION value="im">IMAC Request</OPTION>
+                        <OPTION  value="ser">Service Request</OPTION>
+                        <OPTION selected value="ma">Mail</OPTION>
+                    </SELECT>
+                
+                </TD>
+ 		<TD>
+                    <INPUT type="label" name="txt1" value="ASM"/>
+                </TD>
+		<TD>
+                    <INPUT type="label" name="txt2" value="PMO Team"/>
+                </TD>
+		<TD>
+                    <INPUT type="text" name="txt3" value ="PMO Team"/>
+                </TD>
+		<TD>
+                    <INPUT type="text" name="txt4" class="democlass" value ="PMO team"/>
+                </TD>
+                </TR>
+                <TR>
+                <TD>
+                    <INPUT type="text" name="txt" value="Server Access"/>
+                </TD>
+		<TD>
+                    <SELECT name="ReqType" disabled >
+			<OPTION  value="de"></OPTION>
+                        <OPTION value="in">Service Now Incident</OPTION>
+                        <OPTION value="im">IMAC Request</OPTION>
+                        <OPTION selected value="ser">Service Request</OPTION>
+                        <OPTION value="ma">Mail</OPTION>
+                    </SELECT>
+                
+                </TD>
+ 		<TD>
+                    <INPUT type="label" name="txt1" value="FLM,ASM"/>
+                </TD>
+		<TD>
+                    <INPUT type="label" name="txt2" value="Team Lead"/>
+                </TD>
+		<TD>
+                    <INPUT type="text" name="txt3" value ="Requeseter"/>
+                </TD>
+		<TD>
+                    <INPUT type="text" name="txt4" class="democlass" value ="Team Lead/Onsite Coordintor"/>
+                </TD>
+                
+		</TR>
+
+        </TABLE>
+        </form>
+        </div>
+        </div>
+</body>
